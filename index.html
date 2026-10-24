@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KAIST AI at EMNLP 2026</title>
+<meta name="description" content="Engage with some of our KAIST AI presenters at EMNLP 2026. See when and where they present their talks and posters, Oct 25–27.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kaist-gsai.github.io/emnlp2026/">
+<meta property="og:title" content="KAIST AI at EMNLP 2026">
+<meta property="og:description" content="Engage with some of our KAIST AI presenters at EMNLP 2026. Find them at their talks and posters, Oct 25–27.">
+<meta property="og:image" content="https://kaist-gsai.github.io/emnlp2026/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KAIST AI at EMNLP 2026: meet our presenters at their talks and posters, Oct 25–27">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: conference program — a timed agenda up top, then a filterable wall of paper cards; KAIST blue as ink, amber marks orals */
+:root {
+  --bg: #F3F5F9;
+  --surface: #FFFFFF;
+  --ink: #0E1B33;
+  --muted: #56637B;
+  --line: #D8DEEA;
+  --accent: #1450A8;
+  --accent-soft: #E3ECFA;
+  --oral: #A84F06;
+  --oral-soft: #FCEBDC;
+  --job: #0F6B4F;
+  --job-soft: #DDF3EA;
+  --font-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A1120; --surface: #111A2C; --ink: #E5EBF6; --muted: #95A2BA; --line: #233150;
+    --accent: #84AEF2; --accent-soft: #1A2A4A; --oral: #F2A65E; --oral-soft: #3A2614;
+    --job: #6FD3AE; --job-soft: #14342A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A1120; --surface: #111A2C; --ink: #E5EBF6; --muted: #95A2BA; --line: #233150;
+  --accent: #84AEF2; --accent-soft: #1A2A4A; --oral: #F2A65E; --oral-soft: #3A2614;
+  --job: #6FD3AE; --job-soft: #14342A; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body {
+  margin: 0;
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 48px 72px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 56px; }
+
+/* Header */
+header { display: grid; gap: 18px; }
+.masthead .rest { display: inline-block; white-space: nowrap; }
+.masthead .logo { display: inline; width: 4.29em; height: .7em; vertical-align: 0; margin-right: .22em; }
+.logo .lg-a { fill: #004C98; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo .lg-a { fill: #7FAAF0; } }
+:root[data-theme="dark"] .logo .lg-a { fill: #7FAAF0; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 7vw, 76px); line-height: .98; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+.lead { font-size: 17px; color: var(--muted); margin: 0; }
+.note { width: fit-content; max-width: 100%; margin: 0; padding: 12px 16px; border-radius: 8px; background: var(--accent-soft); color: var(--ink); font-size: 15px; }
+.note strong { color: var(--accent); }
+
+h2 { font-family: var(--font-display); font-weight: 700; font-size: 26px; letter-spacing: -.01em; margin: 0; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 18px; }
+.sec-head p { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* Agenda */
+.days { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.day { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; min-width: 0; }
+.day h3 { margin: 0; padding: 12px 16px; font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; }
+.day h3 span { color: var(--muted); }
+.slot { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.slot:last-child { border-bottom: 0; }
+.slot time { font-family: var(--font-mono); font-size: 13px; font-variant-numeric: tabular-nums; line-height: 1.35; }
+.slot time small { display: block; color: var(--muted); font-size: 12px; }
+.slot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; min-width: 0; }
+.slot li { min-width: 0; }
+.slot li a { color: var(--ink); text-decoration: none; font-weight: 600; }
+.slot li a:hover { color: var(--accent); text-decoration: underline; }
+.where { display: block; font-size: 12.5px; color: var(--muted); }
+.kw { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+.kw span { font-size: 11.5px; line-height: 1.4; padding: 1px 7px; border-radius: 4px; background: var(--bg); border: 1px solid var(--line); color: var(--muted); }
+.where .kind { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; margin-right: 6px; }
+.where .kind.oral { color: var(--oral); }
+.where .kind.poster { color: var(--accent); }
+
+/* Filters */
+.filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button {
+  font: inherit; font-size: 13.5px; padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.filters select, .filters input {
+  font: inherit; font-size: 13.5px; padding: 6px 10px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); min-width: 0;
+}
+.filters input { flex: 1 1 200px; }
+.filters select { flex: 0 1 260px; }
+.count { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+
+/* Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr)); gap: 16px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: 20px; display: flex; flex-direction: column; gap: 12px; min-width: 0;
+  scroll-margin-top: 24px; transition: box-shadow .2s, border-color .2s;
+}
+.card:target { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
+.tag.oral { background: var(--oral-soft); color: var(--oral); }
+.tag.plain { background: transparent; color: var(--muted); padding-left: 0; }
+.card h3 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.22; letter-spacing: -.005em; text-wrap: balance; }
+.tldr { margin: 0; }
+.authors { margin: 0; font-size: 13.5px; color: var(--muted); }
+.authors strong { color: var(--ink); font-weight: 600; }
+.meta { margin: 0; font-size: 13px; color: var(--muted); display: grid; gap: 2px; }
+.meta b { font-weight: 500; color: var(--ink); }
+.topics { display: flex; flex-wrap: wrap; gap: 6px; }
+.topics button { font: inherit; font-size: 12px; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; }
+.topics button:hover { border-color: var(--accent); color: var(--accent); }
+.links { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13.5px; font-weight: 500; }
+.links a { text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+.links a::after { content: " ↗"; font-size: 11px; }
+.sessions { margin-top: auto; padding-top: 12px; border-top: 1px dashed var(--line); display: grid; gap: 6px; }
+.sess { display: grid; grid-template-columns: auto 1fr; gap: 10px; font-size: 13px; align-items: baseline; }
+.sess time { font-family: var(--font-mono); font-size: 12.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sess span { color: var(--muted); min-width: 0; }
+.presenter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 13.5px; }
+.presenter a { font-weight: 600; }
+.seeking { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: -4px; }
+.seeking-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--job); margin-right: 2px; }
+.job { font-size: 12px; padding: 2px 9px; border-radius: 999px; background: var(--job-soft); color: var(--job); font-weight: 500; }
+.empty { padding: 32px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 10px; }
+
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 520px) {
+  .wrap { padding-block: 32px 48px; gap: 40px; }
+  .slot { grid-template-columns: 70px 1fr; }
+  .card { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">EMNLP 2026 · Oct 25–27 · Meet our presenters</div>
+    <h1 class="masthead"><svg class="logo" viewBox="0 0 188.2 30.7" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-t"><title id="logo-t">KAIST AI</title><g><g><rect x="63.4" y="0.2" class="lg-a" width="8" height="30.2"/><polygon class="lg-a" points="106.3,0.2 106.3,6.5 116.4,6.5 116.4,30.4 124.4,30.4 124.4,6.5 134.5,6.5 134.5,0.2 "/><path class="lg-a" d="M95.1,12.1h-6.7c-1.8,0-3.2-0.7-3.2-2.8c0-2.1,1.4-2.8,3.2-2.8h14.4V0.2H87.4C81.7,0.2,77,3.5,77,9.3 s4.7,9.1,10.4,9.1h6.9c1.8,0,3.2,0.7,3.2,2.8c0,2.1-1.4,2.8-3.2,2.8H78.2v6.3h16.9c5.7,0,10.4-3.3,10.4-9.1 C105.5,15.5,100.8,12.1,95.1,12.1"/><polygon class="lg-a" points="38.9,0.2 27.6,27.4 16.8,15.3 30.3,0.2 21.1,0.2 8.3,14.5 8.3,0.2 0.3,0.2 0.3,30.4 8.3,30.4 8.3,16 21.1,30.4 34.5,30.4 43.7,7.6 50.4,24.3 39.7,24.3 42.3,30.4 61,30.4 48.4,0.2 "/><rect x="179.9" y="0.3" class="lg-a" width="8" height="30.2"/><polygon class="lg-a" points="155.8,0.3 165.3,0.3 177.9,30.5 159.2,30.5 156.6,24.5 167.2,24.5 160.6,7.7 151.4,30.5 143.2,30.5 "/></g></g></svg><span class="rest">at EMNLP&nbsp;2026</span></h1>
+    <p class="lead">The presenters behind these talks and posters will be at the conference and would love to connect.<br>Check the schedule, stop by, and say hello.</p>
+    <p class="note"><strong>KAIST AI has more papers at EMNLP 2026 than are listed on this page.</strong><br>The papers here come from presenters who want to engage more with folks at EMNLP.</p>
+  </header>
+
+  <section aria-labelledby="sched-h">
+    <div class="sec-head">
+      <h2 id="sched-h">Where to find us</h2>
+      <p>Local conference time. A presenter will be at every session listed.</p>
+    </div>
+    <div class="days" id="days"></div>
+  </section>
+
+  <section aria-labelledby="papers-h">
+    <div class="sec-head">
+      <h2 id="papers-h">Papers</h2>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="filters">
+      <div class="seg" role="group" aria-label="Filter papers" id="seg">
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="oral" aria-pressed="false">Orals</button>
+        <button type="button" data-f="main" aria-pressed="false">Main</button>
+        <button type="button" data-f="findings" aria-pressed="false">Findings</button>
+        <button type="button" data-f="job" aria-pressed="false">Presenter on the job market</button>
+      </div>
+      <select id="topic" aria-label="Topic"><option value="">All topics</option></select>
+      <input id="q" type="search" placeholder="Search titles, authors, labs…" aria-label="Search papers">
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <footer>This is not a complete list of KAIST AI papers at EMNLP 2026. It features presenters who want to engage more with folks at EMNLP. Sessions may change, so check the official EMNLP program before heading over.</footer>
+</div>
+
+<script>
+const PAPERS = [{"title": "Beyond Paraphrases: Generalization Across Task Formats in Parametric Knowledge Editing", "tldr": "Knowledge edits often fail across task formats despite paraphrase robustness. We identify format-dependent edit directions and address them through cross-format alignment.", "venue": "Findings", "topics": ["LLMs / Language Modeling", "Interpretability & Analysis of Models"], "keywords": ["knowledge-edit", "robustness"], "lab": "SAIL (Prof. Jaesik Choi)", "authors": "Cheongwoong Kang, Jongeun Baek, Yeonjea Kim, Jaesik Choi", "collab": "", "presenter": "Jongeun Baek", "sites": ["https://baek26.github.io/"], "job": ["internships", "full-time industry roles"], "paper": "", "code": "https://github.com/CheongWoong/mf-memit", "project": "", "data": "", "social": "", "format": "Poster", "sessions": [{"name": "Poster Session A", "date": "2026-10-25", "start": "11:00", "end": "12:30", "room": "Hall H", "board": "4500"}]}, {"title": "T-MAP: Red-Teaming LLM Agents with Trajectory-aware Evolutionary Search", "tldr": "T-MAP is an automated red-teaming framework that analyzes LLM agent trajectories and uses evolutionary search to iteratively refine attacks and uncover vulnerabilities.", "venue": "Main", "topics": ["LLM Agents & Tool Use", "Safety / Security & Jailbreaks"], "keywords": ["Red teaming", "LLM Agents", "Safety", "Security"], "lab": "MLAI Lab (Prof. Sung Ju Hwang)", "authors": "Hyomin Lee, Sangwoo Park, Yumin Choi, Sohyun An, Seanie Lee, Sung Ju Hwang", "collab": "University of California, Los Angeles", "presenter": "Hyomin Lee", "sites": ["https://pwnhyo.kr"], "job": ["internships"], "paper": "https://arxiv.org/abs/2603.22341", "code": "https://github.com/pwnhyo/T-MAP", "project": "", "data": "", "social": "https://lnkd.in/p/gA-Y7Jzp", "format": "Oral", "sessions": [{"name": "Session 4: LLM Agent1", "date": "2026-10-25", "start": "16:00", "end": "17:30", "room": "P1", "board": ""}]}, {"title": "Pivot-SD: Efficient Self-Distillation for Masked Diffusion Language Models", "tldr": "Pivot-SD improves reasoning in masked diffusion LMs via data-efficient self-distillation targeting high-impact denoising commitments.", "venue": "Main", "topics": ["LLMs / Language Modeling", "Reasoning (math, logic, planning)", "Efficient Methods (compression, inference, PEFT)"], "keywords": ["diffusion language models", "self-distillation", "efficient training", "post-training", "reasoning"], "lab": "OSI Lab (Prof. Se-Young Yun)", "authors": "Seo Hyun Kim*, Sunwoo Hong*, Younwoo Choi, Chen-Hao Chao, Se-Young Yun†, Rahul G. Krishnan†", "collab": "University of Toronto, Vector Institute", "presenter": "Seo Hyun Kim, Sunwoo Hong", "sites": [], "job": ["full-time industry roles", "PhD positions"], "paper": "https://arxiv.org/abs/2610.03665", "code": "", "project": "https://sunwoohong.github.io/pivot-sd", "data": "", "social": "", "format": "Oral", "sessions": [{"name": "Oral Session 4: Machine Learning for NLP 2", "date": "2026-10-25", "start": "16:00", "end": "17:30", "room": "F7", "board": ""}]}, {"title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory", "tldr": "AMD improves small student agents without training by transferring larger teacher agents’ successful experiences through hierarchical Workflow, Subtask, and Function memories.", "venue": "Findings", "topics": ["LLMs / Language Modeling", "LLM Agents & Tool Use", "Retrieval-Augmented Generation / IR"], "keywords": ["Large Language Models", "LLM Agents", "Agent Memory", "Knowledge Transfer", "Tool Use", "Multi-turn Task"], "lab": "MLAI Lab (Prof. Sung Ju Hwang)", "authors": "Taeil Kim*, Kangsan Kim*, Sung Ju Hwang", "collab": "DeepAuto", "presenter": "Taeil Kim", "sites": ["https://taeilkim-home.github.io/"], "job": ["internships"], "paper": "https://arxiv.org/abs/2608.07169", "code": "https://github.com/taeilkim2465/agentic_memory_distillation/tree/main", "project": "https://agent-memory-distillation.github.io/", "data": "", "social": "https://www.linkedin.com/feed/update/urn:li:activity:7497580027929092096/", "format": "Poster", "sessions": [{"name": "Poster Session B", "date": "2026-10-25", "start": "16:00", "end": "17:30", "room": "Hall H", "board": ""}]}, {"title": "Super Library Agent: Joint Generation and Maintenance of Multiple Applications Beyond the Single Codebase", "tldr": "Beyond single-codebase generation: a multi-agent framework that grows and maintains a shared library across sequentially generated apps, improving maintainability while preserving correctness.", "venue": "Findings", "topics": ["LLM Agents & Tool Use", "Code & Program Synthesis"], "keywords": ["coding agent", "maintainability"], "lab": "MLAI Lab (Prof. Sung Ju Hwang)", "authors": "Daegyu Sung, Yukyeong Lee", "collab": "DeepAuto.ai", "presenter": "Daegyu Sung", "sites": ["https://github.com/sbigstar0310"], "job": ["internships"], "paper": "https://arxiv.org/abs/2608.29310", "code": "https://github.com/sbigstar0310/super-library-agent", "project": "https://sbigstar0310.github.io/super-library-agent/", "data": "", "social": "https://lnkd.in/p/gBw2hu89", "format": "Poster", "sessions": [{"name": "Poster Session C", "date": "2026-10-26", "start": "09:00", "end": "10:30", "room": "", "board": ""}]}, {"title": "Distribution-Consistent Inference for Dynamic Sparse Mixture-of-Experts", "tldr": "Layer-wise distribution alignment for dynamic routing in SMoE models", "venue": "Findings", "topics": ["LLMs / Language Modeling", "Interpretability & Analysis of Models", "Efficient Methods (compression, inference, PEFT)"], "keywords": ["Mixture-of-Experts", "dynamic routing", "dynamic expert pruning", "training-free"], "lab": "MLAI Lab (Prof. Sung Ju Hwang)", "authors": "Dohyeon Kim, Bedionita Soro, Sung Ju Hwang", "collab": "", "presenter": "Dohyeon Kim", "sites": [], "job": [], "paper": "https://arxiv.org/abs/2609.09241", "code": "https://github.com/Dohyeon-Kim1/LDA", "project": "", "data": "", "social": "", "format": "Poster", "sessions": [{"name": "Poster Session C", "date": "2026-10-26", "start": "09:00", "end": "10:30", "room": "Hall H", "board": ""}]}, {"title": "Same Tasks, Different Apps: Why Mobile GUI Agents Fail to Generalize?", "tldr": "We introduce AnyAppBench, a category-controlled live Android benchmark that evaluates cross-application generalization while keeping the user goal fixed.", "venue": "Findings", "topics": ["LLM Agents & Tool Use", "Resources / Benchmarks & Evaluation", "GUI Agents"], "keywords": ["GUI Agents", "Benchmarking", "generalization"], "lab": "Prof. Kee-Eung Kim", "authors": "Tien Tran*, Namho Koh*, Daiki E. Matsunaga, Ayush Jain, Kee-Eung Kim", "collab": "Carnegie Mellon University", "presenter": "Namho Koh", "sites": ["https://www.namhokoh.io/"], "job": ["internships"], "paper": "https://anyappbench.github.io/static/paper/anyappbench.pdf", "code": "", "project": "https://anyappbench.github.io/", "data": "", "social": "https://www.linkedin.com/feed/update/urn:li:activity:7498911459586895873/", "format": "Poster", "sessions": [{"name": "Poster Session C", "date": "2026-10-26", "start": "09:00", "end": "10:30", "room": "Hall H", "board": ""}]}, {"title": "Dementia-R1: Reinforced Pretraining and Reasoning from Unstructured Clinical Notes for Real-World Dementia Prognosis", "tldr": "Dementia-R1 uses reinforcement learning to predict dementia progression from clinical notes, outperforming much larger AI models across real-world datasets.", "venue": "Main", "topics": ["NLP Applications (medical, legal, science, education)"], "keywords": ["dementia prognosis", "reinforcement learning", "clinical LLM", "longitudinal reasoning", "clinical notes", "medical AI", "disease prognosis", "cold-start RL"], "lab": "BISPL (Prof. Jong Chul Ye)", "authors": "Choonghan Kim, Hyunmin Hwang, Hangeol Chang, Jaemin Kim, Jinse Park, Jae-Sung Lim, Jong Chul Ye", "collab": "Asan Medical Center, Haeundai Paik Hospital", "presenter": "Choonghan Kim", "sites": [], "job": [], "paper": "https://arxiv.org/abs/2601.03018", "code": "", "project": "", "data": "", "social": "https://zdnet.co.kr/view/?no=20260114133545", "format": "Oral", "sessions": [{"name": "Oral Session 6", "date": "2026-10-26", "start": "11:00", "end": "12:30", "room": "G7-8", "board": ""}]}, {"title": "PACE-RAG: Patient-Aware Contextual and Evidence-Constrained RAG for Clinical Drug Recommendation", "tldr": "Instead of copying guidelines or the most common drugs of similar patients, PACE-RAG retrieves evidence per  patient symptom and changes a prescription only when that evidence supports it.", "venue": "Findings", "topics": ["LLMs / Language Modeling", "Retrieval-Augmented Generation / IR"], "keywords": ["RAG", "medical domain", "drug recommendation"], "lab": "BISPL (Prof. Jong Chul Ye)", "authors": "Chaeyoung Huh, Hyunmin Hwang, Jung Hwan Shin, Sungyang Jo, Jinse Park, Jong Chul Ye", "collab": "Seoul National University Hospital, Asan Medical Center, Haeundae Paik Hospital", "presenter": "Chaeyoung Huh, Hyunmin Hwang", "sites": ["https://www.cyhuh.com/", "https://sites.google.com/view/hyunmin-hwang/%ED%99%88"], "job": ["internships", "full-time industry roles", "postdoc positions"], "paper": "https://arxiv.org/abs/2603.17356", "code": "https://github.com/cheo0y/PACE-RAG", "project": "", "data": "", "social": "", "format": "Poster", "sessions": [{"name": "Poster Session E", "date": "2026-10-26", "start": "16:45", "end": "18:15", "room": "Hall H", "board": "242-FIND"}]}, {"title": "Adaptive Guidance for Retrieval-Augmented Masked Diffusion Models", "tldr": "We introduce ARAM, a training-free framework that adjusts retrieval guidance at each denoising step and token position using a SNR ratio based on distributional divergence and conditional entropy.", "venue": "Findings", "topics": ["LLMs / Language Modeling", "Retrieval-Augmented Generation / IR", "Question Answering"], "keywords": ["Retrieval-Augmented", "Masked Diffusion", "Adaptive Guidance"], "lab": "BISPL (Prof. Jong Chul Ye)", "authors": "Jaemin Kim, Jong Chul Ye", "collab": "", "presenter": "Jaemin Kim", "sites": ["https://kjm981995.github.io/"], "job": ["internships"], "paper": "https://arxiv.org/pdf/2603.17677", "code": "", "project": "", "data": "", "social": "", "format": "Poster", "sessions": [{"name": "Poster Session E", "date": "2026-10-26", "start": "16:45", "end": "18:15", "room": "Hall H", "board": "281-FIND"}]}, {"title": "HINT-SD: Targeted Hindsight Self-Distillation for Long-Horizon Agents", "tldr": "HINT-SD leverages full-trajectory hindsight to identify failure-critical actions and learns from targeted corrective feedback.", "venue": "Findings", "topics": ["LLMs / Language Modeling", "LLM Agents & Tool Use", "Machine Learning for NLP"], "keywords": ["llm agent", "self-distillation", "llm post-training"], "lab": "MLAI Lab (Prof. Sung Ju Hwang)", "authors": "Woongyeong Yeo, Yumin Choi, Taekyung Ki, Sung Ju Hwang", "collab": "", "presenter": "Woongyeong Yeo", "sites": ["https://wgcyeo.github.io"], "job": ["PhD positions"], "paper": "https://arxiv.org/abs/2605.17873", "code": "https://github.com/wgcyeo/HINT-SD", "project": "", "data": "", "social": "https://x.com/wgcyeo/status/2093149143011320131?s=20", "format": "Poster", "sessions": [{"name": "Poster Session 10", "date": "2026-10-27", "start": "09:00", "end": "10:30", "room": "Hall H", "board": ""}]}, {"title": "AdaPath: Query-Adaptive Path-Finding via Path-Bank for Multi-Hop Implicit Biomedical KGQA", "tldr": "We propose AdaPath, a path-finding framework guided by query-adaptive meta-paths from Path-Bank, a repository reflecting both query semantics and biomedical KG structure.", "venue": "Main", "topics": ["Reasoning (math, logic, planning)", "Retrieval-Augmented Generation / IR", "NLP Applications (medical, legal, science, education)"], "keywords": ["AI4Science", "Biomedical knowledge graph", "LLM", "Biomedical QA"], "lab": "MLAI Lab (Prof. Sung Ju Hwang)", "authors": "Jun Hyeong Kim, Dongki Kim, Yinhua Piao, Sung Ju Hwang", "collab": "DeepAuto.ai", "presenter": "Jun Hyeong Kim", "sites": ["https://jun-hyeong-kim.github.io/"], "job": ["internships"], "paper": "https://arxiv.org/abs/2608.30556", "code": "https://github.com/Jun-Hyeong-Kim/AdaPath", "project": "", "data": "", "social": "https://lnkd.in/p/gzfuT5iP", "format": "Poster", "sessions": [{"name": "Session 10: Poster Session F", "date": "2026-10-27", "start": "09:00", "end": "10:30", "room": "Hall H", "board": "2464"}]}];
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48);
+// Some oral sessions are named only by topic, so fall back to the paper's format
+const isOral = (p, s) => /oral/i.test(s.name) || (p.format === "Oral" && !/poster/i.test(s.name));
+const dayName = d => new Date(d + "T12:00:00Z").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
+const shortTitle = t => { const i = t.indexOf(":"); return i > 0 && i <= 32 ? t.slice(0, i) : t; };
+
+PAPERS.forEach(p => {
+  p.id = "p-" + slug(shortTitle(p.title));
+  p.oral = p.sessions.some(s => isOral(p, s)) || p.format === "Oral";
+  p.presenters = p.presenter.split(/,\s*/);
+  // Up to three submitter keywords for the schedule, skipping ones too generic to tell papers apart
+  p.tags = p.keywords.filter(k => !/^(large language models?|llms?)$/i.test(k)).slice(0, 3)
+    .map(k => /[A-Z]/.test(k.slice(1)) ? k : k.toLowerCase());
+});
+
+// Agenda
+const slots = {};
+PAPERS.forEach(p => p.sessions.forEach(s => {
+  const key = s.date + "|" + s.start + "|" + s.end;
+  (slots[key] = slots[key] || []).push({ p, s });
+}));
+const byDay = {};
+Object.keys(slots).sort().forEach(k => { const d = k.split("|")[0]; (byDay[d] = byDay[d] || []).push(k); });
+document.getElementById("days").innerHTML = Object.entries(byDay).map(([d, keys]) => {
+  const n = keys.reduce((a, k) => a + slots[k].length, 0);
+  return `<div class="day"><h3>${esc(dayName(d))}<span>${n} session${n > 1 ? "s" : ""}</span></h3>` +
+    keys.map(k => {
+      const [, start, end] = k.split("|");
+      const items = slots[k].sort((a, b) => isOral(b.p, b.s) - isOral(a.p, a.s));
+      return `<div class="slot"><time>${start}<small>–${end}</small></time><ul>` +
+        items.map(({ p, s }) => {
+          const where = [s.room, s.board && "Board " + s.board].filter(Boolean).join(" · ");
+          const kind = isOral(p, s) ? "oral" : "poster";
+          return `<li><a href="#${p.id}" title="${esc(p.title)}">${esc(shortTitle(p.title))}</a><span class="where"><span class="kind ${kind}">${kind}</span>${esc(s.name)}${where ? " · " + esc(where) : ""}</span><div class="kw">${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div></li>`;
+        }).join("") + `</ul></div>`;
+    }).join("") + `</div>`;
+}).join("");
+
+// Topic options
+const topics = [...new Set(PAPERS.flatMap(p => p.topics))].sort();
+const sel = document.getElementById("topic");
+sel.insertAdjacentHTML("beforeend", topics.map(t => `<option value="${esc(t)}">${esc(t)} (${PAPERS.filter(p => p.topics.includes(t)).length})</option>`).join(""));
+
+// Cards
+const LINKS = [["paper", "Paper"], ["code", "Code"], ["project", "Project page"], ["data", "Dataset"], ["social", "Announcement"]];
+function authorsHTML(p) {
+  return p.authors.split(/,\s*/).map(a => {
+    const bare = a.replace(/[*†‡]/g, "").trim();
+    return p.presenters.includes(bare) ? `<strong>${esc(a)}</strong>` : esc(a);
+  }).join(", ");
+}
+function presenterHTML(p) {
+  const people = p.presenters.map((n, i) => p.sites[i] ? `<a href="${esc(p.sites[i])}" target="_blank" rel="noopener">${esc(n)}</a>` : `<b>${esc(n)}</b>`).join(" & ");
+  const job = p.job.length
+    ? `<div class="seeking"><span class="seeking-label">${p.presenters.length > 1 ? "Presenters are" : "Presenter is"} looking for</span>${p.job.map(j => `<span class="job">${esc(j)}</span>`).join("")}</div>`
+    : "";
+  return `<div class="presenter"><span>Presented by ${people}</span></div>${job}`;
+}
+function card(p) {
+  const tags = [`<span class="tag">${p.venue === "Main" ? "Main conference" : "Findings"}</span>`];
+  if (p.oral) tags.push(`<span class="tag oral">Oral</span>`);
+  if (p.sessions.some(s => !isOral(p, s))) tags.push(`<span class="tag plain">Poster</span>`);
+  const links = LINKS.filter(([k]) => p[k]).map(([k, l]) => `<a href="${esc(p[k])}" target="_blank" rel="noopener">${l}</a>`).join("");
+  const sess = p.sessions.map(s => {
+    const where = [s.name, s.room, s.board && "Board " + s.board].filter(Boolean).join(" · ");
+    return `<div class="sess"><time>${esc(dayName(s.date))} · ${s.start}–${s.end}</time><span>${esc(where)}</span></div>`;
+  }).join("");
+  return `<article class="card" id="${p.id}">
+    <div class="tags">${tags.join("")}</div>
+    <h3>${esc(p.title)}</h3>
+    <p class="tldr">${esc(p.tldr)}</p>
+    <p class="authors">${authorsHTML(p)}</p>
+    <p class="meta"><span><b>${esc(p.lab)}</b></span>${p.collab ? `<span>With ${esc(p.collab)}</span>` : ""}</p>
+    <div class="topics">${p.topics.map(t => `<button type="button" data-topic="${esc(t)}">${esc(t)}</button>`).join("")}</div>
+    ${links ? `<div class="links">${links}</div>` : ""}
+    ${presenterHTML(p)}
+    <div class="sessions">${sess}</div>
+  </article>`;
+}
+
+const state = { f: "all", topic: "", q: "" };
+function render() {
+  const q = state.q.toLowerCase();
+  const list = PAPERS.filter(p =>
+    (state.f === "all" || (state.f === "oral" && p.oral) || (state.f === "main" && p.venue === "Main") ||
+     (state.f === "findings" && p.venue === "Findings") || (state.f === "job" && p.job.length)) &&
+    (!state.topic || p.topics.includes(state.topic)) &&
+    (!q || [p.title, p.tldr, p.authors, p.lab, p.collab, p.topics.join(" ")].join(" ").toLowerCase().includes(q)));
+  document.getElementById("grid").innerHTML = list.length ? list.map(card).join("")
+    : `<div class="empty">No papers match these filters. Try another topic or clear the search.</div>`;
+  document.getElementById("count").textContent = `${list.length} of ${PAPERS.length} shown`;
+}
+
+document.getElementById("seg").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  state.f = b.dataset.f;
+  document.querySelectorAll("#seg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  render();
+});
+sel.addEventListener("change", () => { state.topic = sel.value; render(); });
+document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+document.getElementById("grid").addEventListener("click", e => {
+  const t = e.target.closest("[data-topic]"); if (!t) return;
+  state.topic = sel.value = t.dataset.topic; render();
+  document.getElementById("papers-h").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+// Agenda links reset filters so the target card is always present
+document.getElementById("days").addEventListener("click", e => {
+  if (!e.target.closest("a")) return;
+  if (state.f !== "all" || state.topic || state.q) {
+    state.f = "all"; state.topic = sel.value = ""; state.q = document.getElementById("q").value = "";
+    document.querySelectorAll("#seg button").forEach(x => x.setAttribute("aria-pressed", x.dataset.f === "all"));
+    render();
+  }
+});
+
+render();
+if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+</script>
+</body>
+</html>
